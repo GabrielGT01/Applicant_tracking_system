@@ -1,0 +1,7 @@
+streamlit
+langchain
+langchain-text-splitters
+langchain_anthropic
+docx2txt
+langchain-anthropic
+pypdf
