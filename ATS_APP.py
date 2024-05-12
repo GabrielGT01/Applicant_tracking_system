@@ -159,7 +159,7 @@ if __name__ == "__main__":
     
     uploaded_file = st.file_uploader("Upload your resume:", type=[ "docx", "pdf"])
     if uploaded_file:
-        add_data = st.button('Add Data', on_click=clear_session)
+        add_data = st.button('Upload Resume', on_click=clear_session)
         if add_data:
                 with st.spinner('Reading and processing file ...'):
                     
@@ -195,14 +195,14 @@ if __name__ == "__main__":
                 first_answer = st.session_state.answer1
                 
                 # text area widget for the LLM answer
-                st.text_area('Percentage and Missing Keywords: ', value=first_answer )
+                st.text_area('Percentage and Missing Keywords: ', value=first_answer,height=150 )
                 
             else:
                 answer1 = first_prompt(requirements,resume, position)
                 st.session_state.answer1 = answer1
                 first_answer = st.session_state.answer1
             # text area widget for the LLM answer
-                st.text_area('Percentage and Missing Keywords: ', value=first_answer )
+                st.text_area('Percentage and Missing Keywords: ', value=first_answer, height=150)
     
     
     st.divider()
@@ -218,12 +218,12 @@ if __name__ == "__main__":
                 second_answer = st.session_state.answer2
                 
                 # text area widget for the LLM answer
-                st.text_area('Evaluation and Improvement Suggestions: ', value=second_answer)
+                st.text_area('Evaluation and Improvement Suggestions: ', value=second_answer,height=150)
                 
             else:
                 answer2 = second_prompt(requirements,resume, position)
                 st.session_state.answer2 = answer2
                 second_answer = st.session_state.answer2
             # text area widget for the LLM answer
-                st.text_area('Evaluation and Improvement Suggestions: ', value=second_answer)
+                st.text_area('Evaluation and Improvement Suggestions: ', value=second_answer,height=150)
             
